@@ -47,10 +47,10 @@ contract Staker {
   // If the `threshold` was not met, allow everyone to call a `withdraw()` function
   // Add a `withdraw()` function to let users withdraw their balance
 
-  // function withdraw() external {
-  //   require(openForWithdraw == true, "Cannot withdraw funds unless the Contract balance is less than Threshold");
-
-  // }
+  function withdraw() external {
+    require(openForWithdraw == true, "Cannot withdraw funds unless the Contract balance is less than Threshold");
+    payable(msg.sender).transfer(balances[msg.sender]);
+  }
 
   // Add a `timeLeft()` view function that returns the time left before the deadline for the frontend
 
