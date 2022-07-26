@@ -16,7 +16,7 @@ contract Staker {
 
   uint256 public deadline = block.timestamp + 72 hours;
 
-  mapping (address => uint256) balances;
+  mapping (address => uint256) public balances;
 
   uint256 public constant threshold = 1 ether;
 
